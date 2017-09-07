@@ -144,16 +144,6 @@ const Main = () => (
   </main>
 )
 
-
-const Link1 = () => (
-
-  <Link to='/MenuExampleTabularOnLeft'>MenuExample</Link>
-
-)
-const Link2 = () => (
-  <Link to='/Home'>Home</Link>
-)
-
 const Header_ = () => (
 
       <Container>
