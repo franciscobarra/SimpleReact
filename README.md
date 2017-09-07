@@ -1,1 +1,1 @@
-# SimpleReact
+# SimpleReact - Semantic-UI
