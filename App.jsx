@@ -1,29 +1,76 @@
 import React from 'react';
+import { Component } from 'react';
+import { Button } from 'semantic-ui-react';
 import { Dropdown } from 'semantic-ui-react';
+import { BrowserRouter, Route, Router, NavLink , Switch, Link } from 'react-router-dom'
 
+class Home extends Component {
+    render(){
+        return (<h1>Hi</h1>);
+    }
+}
+
+class Home2 extends Component {
+    render(){
+        return (<h1>Holi</h1>);
+    }
+}
+
+const AppRo = () => (
+  <div>
+    <Header />
+    <Main />
+  </div>
+)
+
+const Main = () => (
+  <main>
+ <Switch>
+      <Route exact path='/dd' component={Home}/>
+       <Route exact path='/home2' component={Home2}/>
+ </Switch>
+  </main>
+)
+
+
+const Header = () => (
+  <header>
+      <ul>
+        <li><Link to='/dd'>Home</Link></li>
+        <li><Link to='/home2'>Home2</Link></li>
+      </ul>
+  </header>
+)
 
 class App extends React.Component {
    render() {
       return (
-         <div >
-            Hello World!!!
-         </div>,
-         <div>
-         <DropdownQuarterBySprint/>
-      	</div>
+      <BrowserRouter>
+        <AppRo/>
+      </BrowserRouter>
       );
- }
+   }
 }
 
+const ButtonExampleButton = () => (
+  <Button>
+    Click Here
+  </Button>
+);
 
-var quarterOptions = [ {key: '1', value: 'q1', label: 'Q1', text: 'Quarter 1'},
-           			   {key: '2', value: 'q2', label: 'Q2', text: 'Quarter 2'},
-            		   {key: '3', value: 'q3', label: 'Q3', text: 'Quarter 3'},
-            	       {key: '4', value: 'q4', label: 'Q4', text: 'Quarter 4'}]
+const DropdownExampleSearchSelectionTwo = () => (
+  <Dropdown placeholder='State' search selection options={
+  [
+  	{ key: 'AL', value: 'AL', text: 'Alabama' },
+  	{ key: 'ALA', value: 'ALA', text: 'Potito' }
+  ]
 
- 
-const DropdownQuarterBySprint = () => (
-  <Dropdown placeholder='Quarter Options' search selection options={quarterOptions} />
+
+  } />
 )
 
+
+
+
 export default App;
+
